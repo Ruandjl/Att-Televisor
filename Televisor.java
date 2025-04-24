@@ -4,10 +4,10 @@ public class Televisor {
     private int volume;
     private boolean ligado;
 
-    public Televisor(int canal, int volume, boolean ligado){
+    public Televisor(int canal, int volume){
         this.canal = canal;
         this.volume = volume;
-        this.ligado = ligado;
+        this.ligado = false;
     }
 //métodos ligar, desligar, aumentarVolume, diminuirVolume, trocarCanal e o método toString() para retornar a representação textual do objeto.
     public boolean tvLigar(){
@@ -20,10 +20,14 @@ public class Televisor {
         return volume;
     }
     public void aumentarVolume(){
-        volume = volume + 10;
+        if (volume < 100) {
+            volume = volume + 10;
+        }
     }
     public void diminuirVolume(){
-        volume = volume - 10;
+        if (volume > 0) {
+            volume = volume - 10;
+        }
     }
     public void TrocarCanal(int NovoCanal){
         canal = NovoCanal;
